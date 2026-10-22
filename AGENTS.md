@@ -1,5 +1,19 @@
 # 词库维护约定
 
+## 维护归属与修改范围
+
+以下归属由用户明确确认；表中文件名省略 `.dict.yaml`。整份由用户维护的词库可按用户要求调整内容、编码、结构及排序，不受上游作者布局约束。
+
+|维护归属|词库|
+|---|---|
+|整份由用户创建并维护|`name.xkjd6`、`xkjd6.jsj`、`xkjd6.kouyu`、`liuxing.xkjd6`、`xkjd6.chem`、`dup2.xkjd6`、`dup2.xkjd6dz`、`math.xkjd6`、`private.xkjd6`、`xkjd6.shiju`|
+|整份由原作者维护|`symbols.xkjd6`、`symbols.xkjd6dz`、`abbr.xkjd6`、`abbr.xkjd6dz`、`xkjd6.wxwdanzi`、`xkjd6dz`、`xkjd6.iboot`|
+|开头一块由用户维护，后续由原作者维护|`shengpizi.xkjd6`、`shengpizi.xkjd6dz`|
+
+`shengpizi` 两库的用户部分是 YAML 头部之后的第一个连续词条块，至其后首个空行为止；不将用户部分与后续作者部分合并或一起排序。仅要求排序整份用户库时，不处理这两个混合维护库。
+
+部分其他词库由原作者维护，用户希望保留上游内容和布局；不得因全量检查或统一格式而自动修改这些库。归属未确认时不推断为用户自建库；明确针对某个文件或词条的用户指令按其指定范围执行，不能扩大为全库修改。
+
 ## 单字简码与全码
 
 `xkjd6.danzi.dict.yaml` 用于日常输入，新增单字应使用完整编码的最短可用简码，不直接照搬全码；`xkjd6dz.dict.yaml` 保留完整编码，供编码生成和规则检查使用。
@@ -11,6 +25,8 @@
 `xkjd6.cizu.dict.yaml` 的词条区按编码的 ASCII 字典序升序排列，短前缀在其后继编码之前。新增词条或修改编码后应保持有序；同码词条保留原有相对顺序，不按词条正文重排。排序只调整词条位置，保留 YAML 头部、注释、额外字段及换行格式。
 
 `compose.xkjd6.dict.yaml`（组字成词）、`user.xkjd6.dict.yaml`（个人偏好）、`subject.xkjd6.dict.yaml`（学科）、`media.xkjd6.dict.yaml`（影音媒体）、`life.xkjd6.dict.yaml`（生活）分别维护原用户库的对应分类，均按编码稳定升序排列；普通补充词组并入 `xkjd6.cizu.dict.yaml`。人名库为 `name.xkjd6.dict.yaml`，保留原分类注释，分类块内按编码稳定升序排列。文件名与 YAML 的 `name` 保持一致，新增导入项在原导入位置按原分类顺序连续列出。
+
+维护归属表中整份由用户维护的词库，除 `name.xkjd6.dict.yaml` 保留分类块外，均全文按编码稳定升序排列，不以词长分组。分类块的边界以注释和空行为准，不以词长或编码变化推断分块。
 
 ## 词组读音的保留原则
 
