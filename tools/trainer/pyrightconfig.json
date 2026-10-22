@@ -1,0 +1,7 @@
+{
+  "include": ["."],
+  "extraPaths": [".", "../rime-sim", "../key-capture"],
+  "exclude": ["desktop_smoke.py"],
+  "typeCheckingMode": "basic",
+  "pythonVersion": "3.13"
+}

@@ -1,0 +1,6 @@
+# Optional Python tools; the Rust CLI does not need Python.
+# Prefer distribution packages for dbus-python and PyGObject (native libraries).
+rich>=13
+PyYAML>=6
+dbus-python>=1.3
+PyGObject>=3.42

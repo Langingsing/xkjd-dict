@@ -1,0 +1,22 @@
+/target/
+/.cache/
+__pycache__/
+
+# Local dictionaries, reports and captured typing must stay private.
+*.dict.yaml
+/outputs/
+/reports/
+/evidence/
+/logs/
+*.log
+*.jsonl
+audit.json
+audit.md
+round-*.json
+oracle.references.json
+xkjd-type-*/
+.env
+.env.*
+/.venv/
+/.pytest_cache/
+/.ruff_cache/
